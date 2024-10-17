@@ -55,7 +55,7 @@ conn.close()
 
 # Export
 try:
-    data = pd.DataFrame(data, columns = ['customer_id', 'age', 'item_name', 'total_quantity'])
+    data = pd.DataFrame(data, columns = ['customer_id', 'age', 'item_name', 'quantity'])
 except: ""
 outpath = db_loc + 'query.csv'
 data.to_csv(outpath, sep=';', index=False)
