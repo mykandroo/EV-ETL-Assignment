@@ -40,7 +40,7 @@ merged_df = orders.merge(merged_df, on='sales_id')
 merged_df = merged_df.merge(items, on='item_id')
 
 filtered_df = merged_df[(merged_df['age'] >= 18) & (merged_df['age'] <= 35)]
-filtered_df['quantity'] = filtered_df['quantity'].fillna(0).astype(int)
+# filtered_df['quantity'] = filtered_df['quantity'].fillna(0).astype(int)
 
 data = filtered_df.groupby(['customer_id', 'age', 'item_name'], as_index=False)['quantity'].sum()
 data['quantity'] = data['quantity'].round()
